@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1>Pins</h1>
+    {% if pins is defined %}
+        {% for pin in pins %}
+            {{ dump(pin) }}
+            <!-- Objet pin accéder par "obj.propertie"-->
+            <article>
+                <!-- call getter => getTitle-->
+                <h1>{{ pin.title }}</h1>
+                <!-- call getter => getDescription-->
+                <p>{{ pin.description }}</p>
+            </article>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
